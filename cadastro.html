@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Carro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="inicio">
+    <h1>Cadastro de Carro</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="tabela.html">Carros</a>
+      <a href="cadastro.html" class="ativo">Cadastrar</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <h2>Cadastre seu Carro 🏁</h2>
+      <form action="https://formspree.io/f/xnndyrqy" method="POST">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required />
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" required />
+
+        <label for="modelo">Modelo do Carro:</label>
+        <input type="text" id="modelo" name="modelo" placeholder="Ex: Toyota Supra" required />
+
+        <label for="ano">Ano do Carro:</label>
+        <select id="ano" name="ano" required>
+          <option value="" disabled selected>Selecione o ano</option>
+        </select>
+
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 AutoSpeed</p>
+  </footer>
+
+  <script>
+    const selectAno = document.getElementById("ano");
+    for (let ano = 2025; ano >= 1990; ano--) {
+      const opt = document.createElement("option");
+      opt.value = ano;
+      opt.textContent = ano;
+      selectAno.appendChild(opt);
+    }
+  </script>
+</body>
+</html>
